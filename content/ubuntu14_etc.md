@@ -12,7 +12,6 @@ ubuntu 14.04 配置
 home 目录下的目录名, 修改为: 英文, 首字母小写.
 
 cd 切换目录时, 不习惯大写字母开头不习惯.
-
 如果是中文安装 ubuntu, 默认文件名是中文的.
 简单期间, 先批量的中文改英文, 命令如下
 
@@ -35,7 +34,7 @@ $ vim ~/.config/user-dirs.dirs
 # Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
 # homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
 # absolute path. No other format is supported.
-# 
+#
 XDG_DESKTOP_DIR="$HOME/desktop"
 XDG_DOWNLOAD_DIR="$HOME/downloads"
 XDG_TEMPLATES_DIR="$HOME/templates"
@@ -57,7 +56,7 @@ $ sudo apt-get upgrade
 
 ```shell
 $ sudo apt-get install git-all xclip
-$ git config --global user.name "Jackon Yang" 
+$ git config --global user.name "Jackon Yang"
 $ git config --global user.email "jiekunyang@gmail.com"
 ```
 
@@ -99,7 +98,7 @@ apt-get 安装的是 chromium-browser，与 chrome 不一样，关键不能设�
 
 分区类型注意:
 
-- NTFS 分区, 一般需要指定挂载后的权限等信息, umask / dmask 设置权限信息. uid是用户 id, gid 是用户组 id. 
+- NTFS 分区, 一般需要指定挂载后的权限等信息, umask / dmask 设置权限信息. uid是用户 id, gid 是用户组 id.
 - ext4 分区, 可以记录文件的权限信息, 无需手动指定. 若设置了 uid 等参数会报错.
 
 ```shell
@@ -113,6 +112,16 @@ $ id www-data  # get uid
 $ cat /etc/group|grep subversion
 #  subversion:x:1001:www-data,jackonyang
 $ sudo mount -a  # umount before mount
+```
+
+修改分区 label
+
+```shell
+# NTFS格式
+$ sudo apt-get install ntfsprogs
+$ sudo ntfslabel /dev/sda1 newLabelName # "/dev/sda1" 根据实际情况填写
+# ext2/ext3 使用内置命令
+$ sudo e2label /dev/sda1 newLabelName  # "/dev/sda1" 根据实际情况填写
 ```
 
 ## daily APP
