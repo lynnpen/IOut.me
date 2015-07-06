@@ -54,7 +54,7 @@ python 主要包括 2.x 和 3.x 两个大版本，代码之间不兼容。
 
 
 Centos 环境搭建
--------Ubuntu --------
+---------------
 
 #### 开发环境依赖包更新
 
@@ -104,6 +104,8 @@ sudo easy_install -U distribute
 Ubuntu 环境搭建
 ---------------
 
+#### python 与 pip 安装
+
 ```shell
 $ sudo apt-get install -y python python-setuptools python-dev
 $ sudo easy_install -U distribute
@@ -114,14 +116,13 @@ $ sudo apt-get install python-pip
 使用 easy_install or setup.py 时报错:   
 `command 'gcc' failed with exit status 1`
 
-Ubuntu 下开发环境完善
----------------------
+#### Ubuntu 下开发环境完善
 
 一些类库, 依赖的 package 无法通过 pip 自动安装.
 
 ubuntu 下的类库整理如下:
 
-#### lib for apache2/mysql
+###### lib for apache2/mysql
 
 ```shell
 $ apt-get install libapache2-mod-python, libmysqlclient-dev
@@ -130,7 +131,7 @@ $ apt-get install libapache2-mod-python, libmysqlclient-dev
 如果 libmysqlclient-dev 未安装，安装 mysql-python 时报错：  
 `EnvironmentError: mysql_config not found`
 
-#### flake8
+###### flake8
 
 ```shell
 $ sudo pip install flake8
