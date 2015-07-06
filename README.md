@@ -13,9 +13,11 @@
 - [编程新人 Github 教程](content/github_for_new_coder.md)
 - [Vim 入门](content/vim_0to1.md)
 
-#### 深入系列
+#### Vim 系列
 
+- [Vim 入门](content/vim_0to1.md)
 - [Vim plugin 原理](content/vim_plugin_core.md)
+- [我的 Vim 全局通用配置](content/vim_global_config.md)
 
 #### 环境搭建
 
