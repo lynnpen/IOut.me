@@ -5,31 +5,37 @@ Git 是 linux 之父 linus 开发的一个软件, 用于代码的版本管理.
 后来, 几个人基于这个软件, 做了一个网站, 名字叫 Github.
 现在, Github 已经成了码农社区的代名词.
 
-建议:
+学习的核心思路:
 
-    编程新人从熟悉 Github 做起, 在使用中, 逐渐加深对 Git 的理解与掌握.
+    先以最拙劣的方式用起来, 然后再考虑如何用的更优雅.
+
+#### 学习目标 -- __耗时 1h__
+
+1. 注册 github 帐号
+2. 安装 github 客户端
+3. 能够把自己的最新代码上传至 github
+4. 使用 Github Issue 提高沟通效率
 
 
 #### 为什么要使用 Github?
 
-我试图用最少的理由说服编程新人使用 Github,
-而不是全面介绍 Git / Github 的优势
+只求能够说服使用, 不做全面介绍.
 
-1. 新人都希望大神帮忙看下自己的代码. 大神去哪里获取代码呢?
+1. 新人都希望大神帮忙看下自己的代码. 如何把代码发给大神呢?
 
     邮箱? QQ? 别逗了, 点击这个链接体验下: [人人网爬虫代码](https://github.com/JackonYang/renren)
 
-2. 写了一段时间以后, 发现自己的思路错了, 想要回到 2 天前.
+2. 怒写 2 天代码, 发现思路错了, 怎么办?
 
-    写论文 / 写代码, 这种情况不能更常见.
+    当然是退出去. 问题是, 如何退回去?
 
-    如何退回去? 保存很多文件: 最新版, 最新新版, 最新不再修改版!
+    学生写论文时的做法: 保存很多文件 -- 最新版, 最新新版, 最新不再修改版!
 
-    感受下用了 Github 以后的效果: [代码修改的历史记录](https://github.com/JackonYang/renren/commits/master)
+    感受下用了 Github 以后的效果: [代码历史记录](https://github.com/JackonYang/renren/commits/master)
 
 3. 写代码不是一个人的事情
 
-    有了小伙伴以后, 版本管理工具是必须的.
+    有了小伙伴以后, 协作是必须的, 代码的协作必要要用版本管理工具.
     早些年 SVN 一统天下. 现在越来越多的人拥抱 Git.
 
 #### 新手的 Github 教程
@@ -54,9 +60,13 @@ Git 是 linux 之父 linus 开发的一个软件, 用于代码的版本管理.
     ![config github client](/images/github/option.png)
     ![config github client](/images/github/config.png)
 
+    黄色标注的地方, 建议关注并配置下.
+
     特别注意: clone path 就是本地存放代码源文件的位置. 直接在这个目录下编辑 / 调试代码即可.
 
 4. 代码的提交与同步
+
+    - 修改了 clone path 下的代码以后, 在 github 客户端里可以看到文件有变更.
 
     - 本地代码有了变更以后, 提交到 git 软件里, 此时其他人看不到.
 
@@ -68,6 +78,10 @@ Git 是 linux 之父 linus 开发的一个软件, 用于代码的版本管理.
 
         ![sync commits](/images/github/sync.png)
 
-5. 提问!
+5. 使用 Github Iusse 提问
+
+    每个项目, 都有一个 issue 页面. 方便大家沟通.
+
+    如何学习中有任何疑问, 或者建议, 也可以到本项目的 Iusse 页面提问.
 
     [github issue](https://github.com/JackonYang/IOut.me/issues) `New issue` 即可
