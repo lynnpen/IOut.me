@@ -20,3 +20,4 @@
 #### 环境搭建
 
 - [Win7 系统安装与常用软件列表](content/win7_install.md)
+- [搭建 Python 开发环境](content/python-dev-env.md)
