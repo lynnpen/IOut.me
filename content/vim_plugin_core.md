@@ -150,7 +150,7 @@ vim 自身有很多 feature, plugin 都依赖于相应的 feature.
 为了使 vimrc 通用, 使用 plugin 前先用`has()` 检测feature 是否存在.
 如下:
 
-```vim check if feature exists first
+```vim
 if has("syntax")
     syntax on
 endif
