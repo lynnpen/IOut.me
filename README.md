@@ -19,5 +19,6 @@
 
 #### 环境搭建
 
+- [ubuntu 14.04 配置](content/ubuntu14_etc.md)
 - [Win7 系统安装与常用软件列表](content/win7_install.md)
 - [搭建 Python 开发环境](content/python-dev-env.md)
