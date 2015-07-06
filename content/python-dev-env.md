@@ -10,6 +10,10 @@ win7 / ubuntu / Centos 下 Python 开发环境搭建
 - 类库管理工具: pip
 - 常用类库.
 
+#### 常见的坑
+
+1. ubuntu 下装的是 `python-dev`, centos 下装的是 `python-devel`
+
 windows 环境搭建
 ----------------
 
