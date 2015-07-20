@@ -12,6 +12,7 @@
 
 - [编程新人 Github 教程](content/github_for_new_coder.md)
 - [Vim 入门](content/vim_0to1.md)
+- [linux terminal 快捷键 -- 从 0 到风骚](content/terminal-shortcut.md)
 
 #### Vim 系列
 
