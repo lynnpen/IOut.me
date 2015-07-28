@@ -83,11 +83,11 @@ __耗时 1h__
 
     - 与 github 网站上的代码进行同步.
 
+        ![sync commits](/images/github/sync.png)
+
         所谓的同步, 就是上传自己的变更, 下载别人提交的内容.
 
         一般, github 可以把多个人修改后的内容自动合并成一个最新的版本. 非常方便. 遇到不能自动合并的情况, 会提示需要手动合并.
-
-        ![sync commits](/images/github/sync.png)
 
 5. 使用 Github Iusses 提问
 
