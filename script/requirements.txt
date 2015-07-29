@@ -1,0 +1,5 @@
+# Django
+django==1.8
+
+# http
+httplib2==0.9
