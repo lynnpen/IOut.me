@@ -3,3 +3,11 @@ django==1.8
 
 # http
 httplib2==0.9
+
+Markdown
+
+# blog with pelican
+# required Markdown
+pelican
+
+flake8
