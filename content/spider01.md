@@ -110,15 +110,76 @@ print rsp  # http 协议规定的 消息头, 新手可以忽略
 
 ```shell
 $ python dp.py
-{'status': '200', 'content-length': '211424', 'content-location': 'http://www.dianping.com/shop/18664537', 'content-language': 'zh-CN', 'transfer-encoding': 'chunked', 'set-cookie': 'PHOENIX_ID=0a016740-14eee7fda7a-708dde; Domain=.dianping.com; Path=/, JSESSIONID=B6618569A24E9B0AE7147F21F2F4C542; Path=/, aburl=1; Domain=.dianping.com; Expires=Mon, 01-Aug-2016 13:00:33 GMT; Path=/, cy=17; Domain=.dianping.com; Expires=Mon, 01-Aug-2016 13:00:33 GMT; Path=/, cye=xian; Domain=.dianping.com; Expires=Mon, 01-Aug-2016 13:00:33 GMT; Path=/', 'vary': 'Accept-Encoding', 'keep-alive': 'timeout=5', 'server': 'DPweb', 'connection': 'keep-alive', '-content-encoding': 'gzip', 'pragma': 'no-cache', 'cache-control': 'no-cache', 'date': 'Sun, 02 Aug 2015 13:00:33 GMT', 'content-type': 'text/html;charset=UTF-8'}
+{'status': '200', 'content-length': '211424', 
+'content-location': 'http://www.dianping.com/shop/18664537',
+'content-language': 'zh-CN',
+'transfer-encoding': 'chunked',
+'set-cookie': 'PHOENIX_ID=0a016740-14eee7fda7a-708dde; Domain=.dianping.com;
+    Path=/, JSESSIONID=B6618569A24E9B0AE7147F21F2F4C542; Path=/, aburl=1;
+    Domain=.dianping.com; Expires=Mon, 01-Aug-2016 13:00:33 GMT; Path=/, cy=17;
+    Domain=.dianping.com; Expires=Mon, 01-Aug-2016 13:00:33 GMT; Path=/, cye=xian;
+    Domain=.dianping.com; Expires=Mon, 01-Aug-2016 13:00:33 GMT; Path=/',
+'vary': 'Accept-Encoding', 'keep-alive': 'timeout=5',
+'server': 'DPweb', 'connection': 'keep-alive', '-content-encoding': 'gzip',
+'pragma': 'no-cache', 'cache-control': 'no-cache',
+'date': 'Sun, 02 Aug 2015 13:00:33 GMT',
+'content-type': 'text/html;charset=UTF-8'}
 ```
 
 浏览器中打开 'dianping.html', 显示如下:
 
-![html-page](/images/crawler/html-page.png)
+<img width="480px" src="/images/crawler/html-page.png" alt="html-page">
 
 这个页面, 根据浏览器里直接打开网址时看到的不一样, 原因如下:
 
 1. 一次 request, 只下载对应的一个文件, 此处是 html.
 2. 一个页面通常包含一个 html, 多个 js, css 文件.
 3. 浏览器请求一个页面时, 得到 html 文件以后, 会解析出需要的 js, css 文件, 然后再发多个 request, 一个 request 下载一个 js 或者 css 文件.
+
+#### 解析
+
+
+不同的页面, 内容的细节上会有差异.
+解析, 就是一个反复调试的过程.
+
+避免访问网站太频繁被屏蔽.
+建议先把网页的内容存到本地的文件里, 解析阶段从本地文件里读取出内容.
+调试 ok 以后, 再边下载边解析
+
+
+
+
+```python
+import re
+
+# 读取刚刚下载的文件, 文件内容赋值给 content
+with open('dianping.html', 'r') as f:
+    content = ','.join(f.readlines())
+
+review_item_ptn = re.compile(r'href="/member/(\d+)"')  # 声明一个匹配用户 ID 的正则
+res = review_item_ptn.findall(content)  # 找出 content 中所有匹配的内容, 即用户 ID
+
+print res  # 匹配到的全部 ID
+print len(res)  # 用户 ID 的个数
+```
+
+
+#### 下载并解析用户 ID
+
+下载与解析合并后代码如下:
+
+```python
+import re
+from httplib2 import Http
+
+url = 'http://www.dianping.com/shop/18664537'
+
+h = Http()  # 初始化一个实例, 相当于浏览器的一个标签页
+rsp, content = h.request(url)  # 请求一个网页, 打开一个网页
+
+review_item_ptn = re.compile(r'href="/member/(\d+)"')  # 声明一个匹配用户 ID 的正则
+res = review_item_ptn.findall(content)  # 找出 content 中所有匹配的内容, 即用户 ID
+
+print res  # 匹配到的全部 ID
+print len(res)  # 用户 ID 的个数
+```
