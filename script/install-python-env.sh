@@ -14,3 +14,6 @@ sudo apt-get install -y python-pip
 # mysql server is required. install by:
 # sudo apt-get install -y mysql-server
 sudo apt-get install -y libmysqlclient-dev
+
+# plot
+sudo apt-get install -y python-matplotlib

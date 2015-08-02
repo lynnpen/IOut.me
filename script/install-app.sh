@@ -12,3 +12,4 @@ set -e
 # Screen Recorder
 # sudo apt-get -y install istanbul  # failed to work
 sudo apt-get -y install ttyrec
+sudo apt-get -y install sqlitebrowser
