@@ -14,6 +14,10 @@
 - [Vim 入门](content/vim_0to1.md)
 - [linux terminal 快捷键 -- 从 0 到风骚](content/terminal-shortcut.md)
 
+#### 爬虫
+
+- [垂直爬虫教程 01 - 写一个最简单的爬虫](content/spider01.md)
+
 #### Vim 系列
 
 - [Vim 入门](content/vim_0to1.md)
