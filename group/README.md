@@ -250,3 +250,15 @@
 39. S 旁观
 
     主要做bi这块 目前用hana. 最近一段时间需要 Python 跟 R.
+
+40. 落幕的星河
+
+    Java后台，本科电子信息工程，对redis lucen 同样有研究，对分布式缓存有接触。
+
+    正在学习Python，希望把爬虫技术整合进Java系统中。
+
+41. yew
+
+    叶威 目前在深圳工作 从事python开发
+
+    自 java 转 python, 目前在从事 python 后台开发. 使用 tornado, 对爬虫与前端略懂.
