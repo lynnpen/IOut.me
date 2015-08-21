@@ -46,12 +46,37 @@
     一般用于输出，如：
    print '%s is %d years old' % (name，age)
 
-*dictionary,｛key1 : value1，key2 : value2｝,无序，key唯一，不可变量；value不唯一，不可变/可变量。 
+* dictionary,｛key1 : value1，key2 : value2｝,无序，key唯一，不可变量；value不唯一，不可变/可变量。 
 
-  使用:
-	
-	ab = ｛key1 : value1，key2 : value2｝
+	  使用:
+		
+		
+		ab = ｛key1 : value1，key2 : value2｝
         
-	ab[key1] = value1
+		ab[key1] = value1
+	 
+		
+	 循环：
+		
+	for k,v in ab.items():
 
- 		
+* Control Flow:		if
+	
+	条件选择式执行，基本结构：if-elif-else ( elif,else 可选 )
+
+* Control Flow:     while
+	
+	是一个looping (循环结构)，基本结构：while-else (else 可选)
+ 	
+	while __true__: (ture代表真，可被看作1，但任意非0数字都作为true)
+	while __false__: (false代表假，可用0替代)
+	
+	当while后面为 true 的时候，循环一直继续直到while后面跟 false, 循环才结束。
+
+* Control Flow:		for
+	
+	顺序的遍历每个item，基本结构：for...in
+
+* Control Flow:		break
+	
+	跳出，while或者for的loop,也不执行相对应的 else 循环。
