@@ -58,8 +58,11 @@
 		
 	 循环：
 		
-	for k,v in ab.items():
-
+	- for k,v in ab.items():
+	- for k in ab.keys():
+	- for v in ab.values():
+	- for m in ab:默认为key.
+	 
 * Control Flow:		if
 	
 	条件选择式执行，基本结构：if-elif-else ( elif,else 可选 )
@@ -69,6 +72,7 @@
 	是一个looping (循环结构)，基本结构：while-else (else 可选)
  	
 	while __true__: (ture代表真，可被看作1，但任意非0数字都作为true)
+
 	while __false__: (false代表假，可用0替代)
 	
 	当while后面为 true 的时候，循环一直继续直到while后面跟 false, 循环才结束。
@@ -76,7 +80,34 @@
 * Control Flow:		for
 	
 	顺序的遍历每个item，基本结构：for...in
+	循环中不能打开或者读写文件（速度慢）
 
 * Control Flow:		break
 	
 	跳出，while或者for的loop,也不执行相对应的 else 循环。
+
+* JSON：	数据交换格式
+
+	结构：
+	- dic/map
+	- 有序列表（list）
+	- ！！ json 没有set(集合)
+
+	load ： 读文件	
+
+	loads : 读字符串（其中 s 代表 string）
+
+
+	__幂等：程序的结果执行结果是一致的。__
+	
+	__dump__:
+
+		w : 每次先清空再写入。
+		a : 追加。每次重复写入。（最好别用）
+
+	
+	- 更新 json 时，先将 json 中的 data, load 出来放在一个变量中；
+	- 将新的 data 追加在变量中；
+	- 将更新的变量 dump 到 json 文件中。
+
+* 性能和稳定度总是相对的！	
