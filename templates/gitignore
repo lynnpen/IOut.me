@@ -1,10 +1,14 @@
 # .gitignore by JackonYang
 
 
-### Django ###
+# self defined
+db.sqlite3
+cache/*
 media/*
 static/*
-db.sqlite3
+
+
+### Django ###
 local_settings.py
 *.log
 
@@ -20,6 +24,10 @@ pip-log.txt  # Installer logs
 .ropeproject/*
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
+*~
+
+### Pycharm ###
+.idea/*
 
 
 ### Mac ###
