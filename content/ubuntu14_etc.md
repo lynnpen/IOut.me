@@ -124,6 +124,62 @@ $ sudo ntfslabel /dev/sda1 newLabelName # "/dev/sda1" 根据实际情况填写
 $ sudo e2label /dev/sda1 newLabelName  # "/dev/sda1" 根据实际情况填写
 ```
 
+
+## Server and Database
+
+#### Nginx, Apache2
+
+nginx 为主服务器, 负责反向代理.
+apache2 监听 7000 端口, 处理 phpmyadmin
+
+```shell
+$ sudo apt-get install nginx apache2
+```
+
+`/etc/apache2/apache2.conf` 中增加 `ServerName localhost`
+`/etc/apache2/ports.conf` 中, port 改为 7000
+
+#### Mysql, Phpmyadmin
+
+```shell
+$ sudo apt-get install mysql-server phpmyadmin
+$ sudo ln -s /usr/share/phpmyadmin /var/www/phpmyadmin  # 如果安装没有自动生成 link, 手动执行
+```
+
+#### nginx 转发配置
+
+```shell
+upstream phpmyadmin{
+    server 127.0.0.1:7000;
+}
+server {
+    listen 80;
+    server_name mysql.safebang.org;
+
+    location / {
+        proxy_pass_header Server;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_pass http://phpmyadmin;
+    }
+}
+```
+
+
+#### Redis
+
+```shell
+$ wget http://download.redis.io/releases/redis-3.0.3.tar.gz
+$ tar xzf redis-3.0.3.tar.gz
+$ cd redis-3.0.3
+$ make
+$ sudo make install
+
+$ sudo cp redis.conf /etc/
+```
+
 ## daily APP
 
 #### rar
@@ -140,13 +196,13 @@ $ sudo ln -s /usr/local/bin/rar /usr/bin
 #### zip 解压乱码
 
 ```shell
-unzip -O CP936 xxx.zip  # -O set encodings
+$ unzip -O CP936 xxx.zip  # -O set encodings
 ```
 
 #### Vedio Player
 
 ```shell
-sudo apt-get install smplayer
+$ sudo apt-get install smplayer
 ```
 
 设为默认程序, 以下两种方法二选一.
