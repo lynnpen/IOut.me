@@ -39,3 +39,24 @@ assert not self.crawling, "Crawling already taking place"
 ```python
 method = str(method).upper()
 ```
+
+#### HTTP server
+
+```python
+python -m SimpleHTTPServer 8000
+```
+
+#### 时间处理
+
+```python
+today = lambda: time.strftime('%Y%m%d', time.localtime())
+```
+
+
+## Redis
+
+查看所有 key
+
+```redis
+> keys *
+```
