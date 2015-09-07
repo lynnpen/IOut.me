@@ -58,4 +58,21 @@
 * 伪元素：
 
 	- :before 
-	- :after
+	- :after 
+
+*  border-collapse:collapse:表格设置合并边框模型.
+*  border-spacing：设置相邻单元格的边框间的距离（仅用于“边框分离”模式）。
+
+	table
+  		{
+  		border-collapse:separate;
+  		border-spacing:10px 50px;
+  		}
+
+* HTML <td> 标签的 rowspan 属性:规定单元格可横跨的行数。
+
+	rowspan="0" 指示浏览器横跨到表格部分的最后一行（thead、tbody 或者 tfoot）。
+
+* HTML <td> 标签的 colspan 属性:规定单元格可横跨的列数。
+
+	colspan="0" 指示浏览器横跨到列组的最后一列。

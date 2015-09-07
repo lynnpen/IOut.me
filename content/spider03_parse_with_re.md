@@ -40,6 +40,25 @@
 	
 	- 直接手动添加路径时注意要将里面的 '\' 换成 '/'	
 
+* 不能将string变成已存在的变量。
+
+* 从网上下载并储存图片在文件夹 D:\vivian\python_code\logo 中。
+
+	***purl 为 pic 的 url***
+
+	***os.path.basename(purl)可以截取url中的文件名字***
+
+	***D:/vivian/python_code/logo存取图片的文件夹的目录***
+
+		rsp,content = Http().request(purl)	
+
+        pic\_name = os.path.basename(purl)
+
+		with open('D:/vivian/python_code/logo'+'/'+'pic\_name','wb') as f:
+
+			f.write(content)
+
+
 * list，[ ] ，有顺序，可改。  后加.append在最后一个元素最后再加一个元素。  .sort 按照第一个字母顺序排列。
 
 * tuple，( )，不可变。tuple[ ]，[ ]中填放数字，表示第*个item。
