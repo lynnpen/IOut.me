@@ -50,6 +50,7 @@ python -m SimpleHTTPServer 8000
 
 ```python
 today = lambda: time.strftime('%Y%m%d', time.localtime())
+time.strptime(t, '%Y-%m-%d %H:%M:%S')
 ```
 
 
