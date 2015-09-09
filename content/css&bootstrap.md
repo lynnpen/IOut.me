@@ -1,4 +1,4 @@
-* transition主要包含四个属性值：
+x* transition主要包含四个属性值：
 	- 执行变换的属性：transition-property :
 
 		none(没有属性改变)；all（所有属性改变）这个也是其默认值；indet（元素属性名）
@@ -76,3 +76,83 @@
 * HTML <td> 标签的 colspan 属性:规定单元格可横跨的列数。
 
 	colspan="0" 指示浏览器横跨到列组的最后一列。
+
+* :nth-child(__n__) 选择器 : 匹配属于其父元素的第 N 个子元素，_不论元素的类型_。n 可以是数字、关键词或公式。
+		
+	规定属于其父元素的第二个子元素的每个 p 的背景色：
+	<!--python--> 
+		p:nth-child(2)
+		{
+			background:#ff0000;
+		}
+
+* :nth-of-type(__n__) 选择器匹配属于父元素的_特定类型_的第 N 个子元素的每个元素。n 可以是数字、关键词或公式。
+
+	规定属于其父元素的第二个 p 元素的每个 p：
+	<!--python--> 
+		p:nth-of-type(2)
+		{
+			background:#ff0000;
+		}
+
+* :first-child 选择器用于选取属于其父元素的首个子元素的指定选择器。
+
+	选择列表中的第一个 <li> 元素并设置其样式：
+	<!--python-->	
+		li:first-child
+		{
+
+			background:yellow;
+		}
+
+* HTML < td > 标签的 scope 属性:
+
+	+ 值有：col, row, colgroup, rowgroup
+
+	+ 定义将表头单元与数据单元相关联的方法。
+
+	+ 标识某个单元是否是列、行、列组或行组的表头。
+
+	+ 不会在普通浏览器中产生任何视觉变化。
+
+	+ 屏幕阅读器可以利用该属性。
+	
+* <span> 标签被用来组合文档中的行内元素。
+	
+	span 没有固定的格式表现。当对它应用样式时，它才会产生视觉上的
+
+	变化。
+	
+	可以为 span 应用 id 或 class 属性，这样既可以增加适当的语义，又便于
+	
+	对 span 应用样式。
+
+* 相邻兄弟选择器（Adjacent sibling selector）可选择紧接在另一元素后的元素，且二者有相同父元素。
+
+	- 相邻兄弟选择器使用了加号（+），即相邻兄弟结合符（Adjacent sibling combinator）。
+
+	- 例如，如果要增加紧接在 h1 元素后出现的段落的上边距，可以这样写：
+
+		<!--python-->	
+		
+			h1 + p {
+				margin-top:50px;
+			}
+
+	这个选择器读作：“选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素”。
+
+* able-layout 属性: 用来显示表格单元格、行、列的算法规则。
+
+	- 值：
+		
+	 + automatic	默认。列宽度由单元格内容设定。	 
+	 + fixed	列宽由表格宽度和列宽度设定。
+	 + inherit	规定应该从父元素继承 table-layout 属性的值。__任何的版本的 Internet Explorer （包括 IE8）都不支持属性值 "inherit"__
+	 
+
+* !important 语法:覆盖原本的权重。
+
+* 所有的 inline 元素都没有 width 和 height。
+  
+  	可以设置 display: block; 把 inline 元素当作 block 元素来处理，再设置 width 和 height。
+
