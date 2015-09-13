@@ -262,3 +262,9 @@
     叶威 目前在深圳工作 从事python开发
 
     自 java 转 python, 目前在从事 python 后台开发. 使用 tornado, 对爬虫与前端略懂.
+
+42. Penny
+
+    Penny, 北京工作，企业自建电子邮件系统领域，售前工作。
+
+    工作中会用到shell和python。
